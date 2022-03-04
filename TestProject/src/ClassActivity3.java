@@ -8,7 +8,6 @@ public class ClassActivity3 {
 	
 		public static void main(String[] args) throws InterruptedException {
 	        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Sinth\\Downloads\\chromedriver.exe");
-
 	        WebDriver dr = new ChromeDriver();
 	        dr.get("https://omayo.blogspot.com/2013/05/page-one.html");
 
@@ -33,41 +32,51 @@ public class ClassActivity3 {
 	        Thread.sleep(2000);
 
 	        WebElement textArea1 = dr.findElement(By.xpath("//textarea[contains(text(),'The cat was playing in the garden.')]"));
-	        textArea.sendKeys("this is a text area 2"); // for text area
+	        textArea1.sendKeys("this is a text area 2"); // for text area 2
 
 	        Thread.sleep(2000);
 
-	        dr.findElement(By.xpath("//button[@id='but2']")).click();
+	        WebElement enablebutton = dr.findElement(By.xpath("//button[@id='but2']"));
+	        System.out.println("check enable = " + enablebutton.isEnabled()); //for enable button
 
-	        Thread.sleep(2000);
+	        //isenabled - true disable -false
+	        //isdisplayed - true /false  // displayed
+	        //isselected - checkbox
 
-	         dr.findElement(By.xpath("//button[@id='but1']]")).click();
+	     //   dr.findElement(By.xpath("//button[@id='but2']")).click();
+
+	       // Thread.sleep(2000);
+
+	       WebElement btn1 =  dr.findElement(By.xpath("//button[@id='but1']"));
+	        System.out.println("Check enabled = " + btn1.isEnabled()); // for disable button
 
 	         Thread.sleep(2000);
 
-	         WebElement textArea2 = dr.findElement(By.xpath("//input[@id='tb2']"));
-
-	         Thread.sleep(2000);
-
-	         textArea.sendKeys("this is a text area 2"); // for text area
+	       // WebElement textArea2 = dr.findElement(By.xpath("//input[@id='tb2'])"));
+	       // textArea2.sendKeys("this is a text area 3"); // for text area 2
 
 	          Thread.sleep(2000);
 
-	        WebElement textArea3 = dr.findElement(By.xpath("//h2[contains(text(),'Buttons with same name attribute values')]"));
-	        textArea.sendKeys("this is a text area 2"); // for text area
+	       // WebElement textArea3 = dr.findElement(By.xpath("//h2[contains(text(),'Buttons with same name attribute values')]"));
+	       // textArea3.sendKeys("this is a text area 2"); // for disabled text area
 
-	        dr.findElement(By.xpath("//button[@name=\"samename\" ][1]")).click(); // for submit button
+	        WebElement button = dr.findElement(By.xpath("//button[@name='samename' ][1]"));
+	        button.click();
 
-	        dr.findElement(By.xpath("//button[@name=\"samename\" ][2]")).click(); // for login button
+	        WebElement button1 = dr.findElement(By.xpath("//button[@name='samename' ][2]"));
+	        button1.click(); // for login button
 
-	        dr.findElement(By.xpath("//button[@name=\"samename\" ][3]")).click(); // for register button
+	        WebElement button2 = dr.findElement(By.xpath("//button[@name='samename' ][3]"));
+	        button2.click();
 
-	        dr.findElement(By.id("//form[@name=\"form1\"]//input[@ type =\"text\"]")).sendKeys("john"); //for username
+	        WebElement Username = dr.findElement(By.xpath("//form[@name='form1']//input[@type='text']"));
+	        Username.sendKeys("john"); //for username
 
-	        dr.findElement(By.id("//form[@name=\"form1\"]//input[@ type =\"password\"]")).sendKeys("john123"); // for password
+	        WebElement Password = dr.findElement(By.xpath("//form[@name='form1']//input[@type='password']"));
+	        Password.sendKeys("john"); //for username
 
-	        dr.findElement(By.xpath("//button[contains(text(),'LogIn')]")).click(); // for login button
-
+	        WebElement LoginButton = dr.findElement(By.xpath("//form[@name='form1']//button[@type='button']"));
+	        LoginButton.click(); //for username
 
 
 
