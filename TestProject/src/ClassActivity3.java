@@ -27,7 +27,7 @@ public class ClassActivity3 {
 	        Thread.sleep(2000);
 
 	        WebElement Continents2= dr.findElement(By.xpath("//input[@value='Selenium WebDriver']"));
-	        Continents2.click(); //
+	        Continents2.click(); //Text Box with Preloaded Text
 
 	        Thread.sleep(2000);
 
@@ -61,22 +61,22 @@ public class ClassActivity3 {
 	       // textArea3.sendKeys("this is a text area 2"); // for disabled text area
 
 	        WebElement button = dr.findElement(By.xpath("//button[@name='samename' ][1]"));
-	        button.click();
+	        button.click(); //for submit button
 
 	        WebElement button1 = dr.findElement(By.xpath("//button[@name='samename' ][2]"));
 	        button1.click(); // for login button
 
 	        WebElement button2 = dr.findElement(By.xpath("//button[@name='samename' ][3]"));
-	        button2.click();
+	        button2.click(); // for register button
 
 	        WebElement Username = dr.findElement(By.xpath("//form[@name='form1']//input[@type='text']"));
 	        Username.sendKeys("john"); //for username
 
 	        WebElement Password = dr.findElement(By.xpath("//form[@name='form1']//input[@type='password']"));
-	        Password.sendKeys("john"); //for username
+	        Password.sendKeys("john"); //for password
 
 	        WebElement LoginButton = dr.findElement(By.xpath("//form[@name='form1']//button[@type='button']"));
-	        LoginButton.click(); //for username
+	        LoginButton.click(); //for login button
 
 
 
