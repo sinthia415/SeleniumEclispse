@@ -10,6 +10,7 @@ public class ClassActivity3 {
 	        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Sinth\\Downloads\\chromedriver.exe");
 	        WebDriver dr = new ChromeDriver();
 	        dr.get("https://omayo.blogspot.com/2013/05/page-one.html");
+	        		
 
 	        WebElement Continents= dr.findElement(By.xpath("//select[@id='multiselect1']"));
 	        Continents.click(); // for multiselection box
@@ -78,9 +79,33 @@ public class ClassActivity3 {
 	        WebElement LoginButton = dr.findElement(By.xpath("//form[@name='form1']//button[@type='button']"));
 	        LoginButton.click(); //for login button
 
+	        WebElement NameAttribute = dr.findElement(By.xpath("//input[@name='textboxn']"));
+	        NameAttribute.sendKeys("hello there"); //Locate using name attribute
+	        
+	        WebElement LocateNameAttribute = dr.findElement(By.xpath("//div[@class='widget-content']//input[@class='classone']"));
+	        LocateNameAttribute.sendKeys("hi there"); //Locate using class
+	        
+	        WebElement elementhavingsameclasnameofabovefield = dr.findElement(By.xpath("//body/div[3]/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div[1]/div[4]/div[3]/div[1]/aside[1]/div[1]/div[14]/div[1]/input[1]"));
+	        elementhavingsameclasnameofabovefield .sendKeys("hey there"); //elementhavingsameclasnameofabovefield
+	        
+	        WebElement Username1 = dr.findElement(By.xpath("//form[@name='login']//input[@name='userid']"));
+	        Username1.sendKeys("johny"); //username for simple login page
+	        
+	        
+	        WebElement Password1 = dr.findElement(By.xpath("//form[@name='login']//input[@name='pswrd']"));
+	        Password1.sendKeys("johny1234"); //password for simple login page
+	        
+	        WebElement Login = dr.findElement(By.xpath("//form[@name='login']//input[@type='button']"));
+	        Login.click(); //for login button
+	        
+	        WebElement Cancel = dr.findElement(By.xpath("//form[@name='login']//input[@type='reset']"));
+	        Cancel.click(); // for cancel button
+	        
+	        
 
 
-		// TODO Auto-generated method stub
+
+		
 
 	}
 
