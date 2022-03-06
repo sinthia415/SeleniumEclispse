@@ -12,10 +12,15 @@ public class ClassActivity3 {
 	        dr.get("https://omayo.blogspot.com/2013/05/page-one.html");
 	        		
 
-	        WebElement Continents= dr.findElement(By.xpath("//select[@id='multiselect1']"));
-	        Continents.click(); // for multiselection box
+	        WebElement volvo= dr.findElement(By.xpath("//option[@value='volvox'][1]"));
+	        volvo.click(); //for volvo
+	        
 	        Thread.sleep(2000);
+	        
+	        WebElement Swiftx= dr.findElement(By.xpath("//option[@value='swiftx'][1]"));
+	        Swiftx.click(); //for swiftx
 
+	        
 	        WebElement Continents1= dr.findElement(By.xpath("//select[@id='drop1']"));
 	        Continents1.click(); // for older newsletter
 
